@@ -1,0 +1,21 @@
+<div class="details-section">
+    <div class="container-fluid">
+
+        <img src="{{ product.imageURL }}" class="detail-img">
+
+        <h3>{{ product.name }}</h3>
+        <div class="price">{{ product.unitPrice | currency:'EUR' }}</div>
+
+        <div class="number"> Disponibili: {{ product.unitsInStock }} </div>
+        <div *ngIf="product.unitsInStock != 0">
+            <button (click)="addToCart()" class="btn btn-primary btn-sm">Aggiungi al carrello</button>
+        </div>
+
+        <hr>
+        <h4>Descrizione</h4>
+        <p>{{ product.description }}</p>
+
+        <a routerLink="/products" class="mt-5">Torna alla lista dei prodotti</a>
+
+    </div>
+</div>
